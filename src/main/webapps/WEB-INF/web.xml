@@ -34,7 +34,7 @@
 	<!--<url-pattern>/</url-pattern>-->
 	<!--</servlet-mapping>-->
 
-	<!-- 编码过滤器 -->
+	 <!--&lt;!&ndash;编码过滤器&ndash;&gt;-->
 	<!--<filter>-->
 		<!--<filter-name>characterEncodingFilter</filter-name>-->
 		<!--<filter-class>org.springframework.web.filter.CharacterEncodingFilter</filter-class>-->
@@ -45,7 +45,7 @@
 	<!--</filter>-->
 	<!--<filter-mapping>-->
 		<!--<filter-name>characterEncodingFilter</filter-name>-->
-		<!--<url-pattern>/*</url-pattern>-->
+		<!--<url-pattern>/</url-pattern>-->
 	<!--</filter-mapping>-->
 
 	<!-- jsp的配置 -->
@@ -58,7 +58,7 @@
 			<!-- 不能在页面使用java脚本 -->
 			<scripting-invalid>true</scripting-invalid>
 			<!-- 给所有的jsp页面导入要依赖的库，tablib.jsp就是一个全局的标签库文件  -->
-			<include-prelude>..//WEB-INF/views/taglib.jsp</include-prelude>
+			<include-prelude>/WEB-INF/views/taglib.jsp</include-prelude>
 		</jsp-property-group>
 	</jsp-config>
 	<!---->

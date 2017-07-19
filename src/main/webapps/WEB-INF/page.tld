@@ -21,7 +21,7 @@
   		<!-- 标签名 -->
   		<name>pager</name>
   		<!-- 标签处理类 -->
-  		<tag-class>cn.paul.utils.PageTag</tag-class>
+  		<tag-class>paul.utils.PageTag</tag-class>
   		<!-- 设置标签为空 -->
   		<body-content>empty</body-content>
   		

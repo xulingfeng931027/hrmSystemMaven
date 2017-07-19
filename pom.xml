@@ -4,6 +4,19 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <build>
+        <resources>
+            <resource>
+                <directory>
+                    src/main/resources
+                </directory>
+            </resource>
+            <resource>
+                <directory>src/main/java</directory>
+                <includes>
+                    <include>**/*.xml</include>
+                </includes>
+            </resource>
+        </resources>
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
@@ -58,8 +71,13 @@
           <dependency>
               <groupId>mysql</groupId>
               <artifactId>mysql-connector-java</artifactId>
-              <version>8.0.7-dmr</version>
+              <version>5.1.42</version>
           </dependency>
+          <!--<dependency>-->
+          <!--<groupId>mysql</groupId>-->
+          <!--<artifactId>mysql-connector-java</artifactId>-->
+          <!--<version>5.1.17</version>-->
+      <!--</dependency>-->
 
 
           <!-- spring begin -->
@@ -102,25 +120,6 @@
           </dependency>
           <!-- spring end -->
 
-          <!-- web jar -->
-          <dependency>
-              <groupId>javax.servlet</groupId>
-              <artifactId>javax.servlet-api</artifactId>
-              <version>3.0.1</version>
-              <scope>provided</scope>
-          </dependency>
-          <dependency>
-              <groupId>javax.servlet</groupId>
-              <artifactId>jstl</artifactId>
-              <version>1.1.2</version>
-              <scope>provided</scope>
-          </dependency>
-          <dependency>
-              <groupId>javax.servlet.jsp</groupId>
-              <artifactId>javax.servlet.jsp-api</artifactId>
-              <version>2.3.1</version>
-              <scope>provided</scope>
-          </dependency>
           <!-- jackson jar -->
           <dependency>
               <groupId>org.codehaus.jackson</groupId>
