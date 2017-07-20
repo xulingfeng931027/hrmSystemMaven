@@ -12,10 +12,12 @@
     <meta http-equiv="description" content="This is my page"/>
     <link href="${pageContext.request.contextPath}/css/css.css" type="text/css" rel="stylesheet"/>
     <!-- 导入jquery插件 -->
-    <script type="text/javascript" src="${pageContext.request.contextPath }/js/jquery-1.11.0.js"></script>
+    <%--<script type="text/javascript" src="${pageContext.request.contextPath }/js/jquery-1.11.0.js"></script>--%>
     <script type="text/javascript" src="${pageContext.request.contextPath }/js/jquery-migrate-1.2.1.js"></script>
     <script type="text/javascript" src="${pageContext.request.contextPath }/js/fkjava_timer.js"></script>
-    <script type="text/javascript">
+    <script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+
+    <script>
         /** 文档加载完成后立即执行的方法 */
         // var weeks = new Array();
 
