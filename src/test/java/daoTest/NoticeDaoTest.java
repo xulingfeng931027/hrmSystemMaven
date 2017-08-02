@@ -1,4 +1,4 @@
-package junit;
+package daoTest;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;

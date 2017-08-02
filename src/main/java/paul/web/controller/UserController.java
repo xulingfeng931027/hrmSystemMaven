@@ -6,6 +6,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import paul.domain.User;
 import paul.utils.PageModel;
@@ -24,19 +25,21 @@ public class UserController {
 
     //处理登陆请求
     @PostMapping("/login")
-    public String login(@RequestParam("username") String username, @RequestParam("password") String password,
-                        HttpSession session, RedirectAttributes model) {
+    public ModelAndView login(@RequestParam("username") String username, @RequestParam("password") String password,
+                              HttpSession session, ModelAndView mv) {
         //调用登陆方法
         User user = hrmService.login(username, password);
         if (user != null) {
             //将用户保存到model中
             session.setAttribute("user", user);
-            model.addFlashAttribute(user);
-            return "redirect:/right.jsp";
+            mv.addObject(user);
+            mv.setViewName("redirect:/right.jsp");
+            return mv;
         }
         //设置登陆失败信息
-        model.addAttribute("message", "登录名或密码错误请重新登陆");
-        return "forward:/WEB-INF/views/loginForm.jsp";
+        mv.addObject("message", "登录名或密码错误请重新登陆");
+        mv.setViewName("forward:/WEB-INF/views/loginForm.jsp");
+        return mv;
 
     }
 
