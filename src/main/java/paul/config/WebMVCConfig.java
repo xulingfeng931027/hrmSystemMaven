@@ -1,14 +1,20 @@
 package paul.config;
 
-import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.ComponentScan;
-import org.springframework.context.annotation.Configuration;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import org.springframework.context.annotation.*;
+import org.springframework.http.MediaType;
+import org.springframework.http.converter.HttpMessageConverter;
+import org.springframework.http.converter.json.MappingJackson2HttpMessageConverter;
 import org.springframework.web.servlet.ViewResolver;
 import org.springframework.web.servlet.config.annotation.DefaultServletHandlerConfigurer;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
+import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
 import org.springframework.web.servlet.view.InternalResourceViewResolver;
 import org.springframework.web.servlet.view.JstlView;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by paul on 2017-06-14.
@@ -17,6 +23,7 @@ import org.springframework.web.servlet.view.JstlView;
 @Configuration
 @EnableWebMvc
 @ComponentScan(basePackages = {"paul.web.*"})
+//@ImportResource(locations = {"classpath:json-support.xml"})
 public class WebMVCConfig extends WebMvcConfigurerAdapter {
     @Bean
     public ViewResolver viewResolver() {
@@ -30,9 +37,17 @@ public class WebMVCConfig extends WebMvcConfigurerAdapter {
         return resolver;
     }
 
+
+
 //    @Override
-//    public void addViewControllers(ViewControllerRegistry registry) {
-//        registry.addViewController("/WEB-INF/views/taglib.jsp");
+//    public void configureMessageConverters(Li
+// st<HttpMessageConverter<?>> converters) {
+//        MappingJackson2HttpMessageConverter converter = new MappingJackson2HttpMessageConverter(new ObjectMapper());
+//        List<MediaType> list = new ArrayList<>();
+//        list.add(MediaType.APPLICATION_JSON_UTF8);
+//        converter.setSupportedMediaTypes(list);
+//        converters.add(converter);
+//        super.configureMessageConverters(converters);
 //    }
 
 //    //配置自定义拦截器
