@@ -22,7 +22,7 @@ import java.util.List;
  */
 @Configuration
 @EnableWebMvc
-@ComponentScan(basePackages = {"paul.web.*"})
+@ComponentScan(basePackages = {"paul.web.*","paul.controller2"})
 //@ImportResource(locations = {"classpath:json-support.xml"})
 public class WebMVCConfig extends WebMvcConfigurerAdapter {
     @Bean

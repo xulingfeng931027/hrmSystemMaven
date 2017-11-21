@@ -1,6 +1,7 @@
 package paul.domain;
 
 import com.sun.istack.internal.NotNull;
+import org.springframework.format.annotation.DateTimeFormat;
 
 import java.util.Date;
 
@@ -45,6 +46,7 @@ public class User {
      *
      * @mbg.generated
      */
+    @DateTimeFormat(iso = DateTimeFormat.ISO.DATE)
     private Date createDate;
     /**
      *
